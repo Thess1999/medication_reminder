@@ -18,6 +18,10 @@
             color: white;
             padding: 15px 0;
             text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        header:hover {
+            background-color: #45a049;
         }
         section {
             margin: 20px;
@@ -25,6 +29,10 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
         }
         h2 {
             color: #333;
@@ -38,6 +46,7 @@
             border-radius: 5px;
             font-size: 16px;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
         .button:hover {
             background-color: #45a049;
@@ -66,6 +75,23 @@
             color: #4CAF50;
             font-weight: bold;
         }
+        .search-bar {
+            margin-top: 10px;
+            padding: 8px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-results {
+            margin-top: 10px;
+            list-style: none;
+            padding: 0;
+        }
+        .search-results li {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
@@ -91,13 +117,7 @@
     <h2>How It Works</h2>
     <p>The program lets you set reminders for any medication by specifying its name and how often you need to take it (e.g., every 30 minutes). You will receive alerts at the specified interval, ensuring you never forget your doses.</p>
 </section>
-    
-<section>
-    <h2>Download the Application</h2>
-    <p>If you want to quickly get started without compiling the program, you can download the precompiled version of the Medication Reminder Program for your operating system.</p>
-    <a href="https://yourdownloadlink.com/medication_reminder.zip" download class="button">Download Now</a>
-</section>
-    
+
 <section>
     <h2>Installation and Usage</h2>
     <button class="button" onclick="toggleInstructions()">View Detailed Instructions</button>
@@ -137,9 +157,59 @@ Reminder added with ID: 1
         </code></pre>
     </div>
 </section>
-    <footer>
+
+<section>
+    <h2>Download the Application</h2>
+    <p>If you want to quickly get started without compiling the program, you can download the precompiled version of the Medication Reminder Program for your operating system.</p>
+    <a href="https://yourdownloadlink.com/medication_reminder.zip" download class="button">Download Now</a>
+</section>
+
+<section>
+    <h2>Search Instructions</h2>
+    <p>Use the search bar below to find specific instructions quickly:</p>
+    <input type="text" class="search-bar" id="searchInput" placeholder="Search instructions..." oninput="filterInstructions()">
+    <ul class="search-results" id="searchResults">
+        <li>Clone the repository</li>
+        <li>Navigate to the project directory</li>
+        <li>Build and run the project</li>
+        <li>Add Reminder</li>
+        <li>List Reminders</li>
+        <li>Remove Reminder</li>
+        <li>Exit the program</li>
+    </ul>
+</section>
+
+<footer>
     <p>&copy; 2025 Medication Reminder Program - All rights reserved</p>
 </footer>
 
+<script>
+    function toggleInstructions() {
+        const instructions = document.getElementById('instructions');
+        if (instructions.style.display === 'none') {
+            instructions.style.display = 'block';
+        } else {
+            instructions.style.display = 'none';
+        }
+    }
+
+    function filterInstructions() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const results = document.getElementById('searchResults');
+        const listItems = results.getElementsByTagName('li');
+        
+        Array.from(listItems).forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.style.display = text.includes(input) ? 'list-item' : 'none';
+        });
+    }
+
+    // Show instructions by default
+    document.getElementById('instructions').style.display = 'none';
+</script>
+
 </body>
 </html>
+    
+            
+            
