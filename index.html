@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medication Reminder Program - A Rust-based application to manage medication schedules">
+    <title>Medication Reminder Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .benefits ul {
+            list-style-type: square;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #instructions {
+            display: none;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Medication Reminder Program</h1>
+    <p>Keep track of your medication schedule effortlessly</p>
+</header>
+
+<section class="benefits">
+    <h2>Why You Should Use This Application</h2>
+    <p>This Medication Reminder Program is designed to help users manage their medication schedules effectively. Here are the key benefits:</p>
+    <ul>
+        <li>Never forget your medication again with timely reminders.</li>
+        <li>Customizable interval settings to suit your needs.</li>
+        <li>Simple, easy-to-use, and built with Rust for performance.</li>
+        <li>Clear and intuitive text-based interface for all ages.</li>
+        <li>Manage multiple reminders with ease.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How It Works</h2>
+    <p>The program lets you set reminders for any medication by specifying its name and how often you need to take it (e.g., every 30 minutes). You will receive alerts at the specified interval, ensuring you never forget your doses.</p>
+</section>
+
+<section>
+    <h2>Installation and Usage</h2>
+    <button class="button" onclick="toggleInstructions()">View Detailed Instructions</button>
+    <div id="instructions">
+        <h3>Installation</h3>
+        <p>Follow these steps to install the Medication Reminder Program on your system:</p>
+        <ol>
+            <li><span class="highlight">Clone the repository:</span> Open your terminal and run the following command:
+                <pre><code>git clone https://github.com/yourusername/medication-reminder.git</code></pre>
+            </li>
+            <li><span class="highlight">Navigate to the project directory:</span>
+                <pre><code>cd medication-reminder</code></pre>
+            </li>
+            <li><span class="highlight">Build and run the project:</span> Ensure that Rust is installed, then run:
+                <pre><code>cargo run</code></pre>
+            </li>
+        </ol>
+        <h3>Usage</h3>
+        <p>Once the program is running, you will be presented with a menu of options:</p>
+        <ol>
+            <li><span class="highlight">Add Reminder</span> – Enter a medication and set a reminder interval.</li>
+            <li><span class="highlight">List Reminders</span> – View all your current medication reminders.</li>
+            <li><span class="highlight">Remove Reminder</span> – Delete a reminder by providing its ID.</li>
+            <li><span class="highlight">Exit</span> – Exit the program.</li>
+        </ol>
+        <h3>Example Usage</h3>
+        <pre><code>
+Choose an option:
+1. Add Reminder
+2. List Reminders
+3. Remove Reminder
+4. Exit
+
+1
+Enter the medication and reminder interval (e.g., 'aspirin every 30 minutes'): aspirin every 30 minutes
+Reminder added with ID: 1
+        </code></pre>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Medication Reminder Program - All rights reserved</p>
+</footer>
+
+<script>
+    function toggleInstructions() {
+        const instructions = document.getElementById('instructions');
+        if (instructions.style.display === 'none') {
+            instructions.style.display = 'block';
+        } else {
+            instructions.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
