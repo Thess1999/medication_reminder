@@ -20,8 +20,7 @@ A simple Rust-based application to help users manage medication reminders. This 
 ## Installation
 
 1. **Clone this repository** to your local machine:
-   
+
    ```bash
- git clone https://github.com/Thess1999/medication_reminder.git
- cd medication_reminder
- ```
+   git clone https://github.com/Thess1999/medication_reminder.git
+   cd medication_reminder
